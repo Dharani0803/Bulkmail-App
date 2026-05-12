@@ -1,6 +1,6 @@
 const express = require("express")
 const cors = require("cors")
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 const mongoose = require("mongoose")
 
 const app = express()
@@ -68,8 +68,6 @@ app.post("/sendemail",function(req,res){
         console.log("No credentials found");
         return res.send(false)
     }
-
-    const { Resend } = require("resend");
 
     const resend = new Resend("re_isjxup3Z_GxzAf88b67xi1r7Aqz9hCcoH");
 

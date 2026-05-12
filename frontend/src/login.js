@@ -41,9 +41,7 @@ function Login() {
   })
     .then((res) => {
       if (res.data.status === true) {
-        setTimeout(() => {
           navigate("/home");
-        }, 1000);
       } else {
         setError(res.data.msg || "Invalid username or password");
         setLoading(false);

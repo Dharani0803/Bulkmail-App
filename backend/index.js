@@ -60,14 +60,14 @@ app.post("/sendemail",function(req,res){
     const emailList = req.body.emailList
     const subject = req.body.subject
 
-    credential.find().then(function(data){
-
     const transporter = nodemailer.createTransport({
-    service:"gmail",
+    host: "sandbox.smtp.mailtrap.io",
+    port: 2525,
     auth: {
-        user: data[0].toJSON().user,
-        pass: data[0].toJSON().pass,
-  }
+        user: "YOUR_MAILTRAP_USERNAME",
+        pass: "YOUR_MAILTRAP_PASSWORD"
+    }
+});
 });
 
 

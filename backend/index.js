@@ -70,15 +70,16 @@ app.post("/sendemail",function(req,res){
     }
 
     const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
+    service: "gmail",
     auth: {
         user: data[0].toJSON().user,
         pass: data[0].toJSON().pass,
     },
+    tls: {
+        rejectUnauthorized: false
+    },
+    family: 4
 });
-
 
 
  new Promise(async function(resolve,reject){

@@ -109,11 +109,11 @@ app.post("/sendemail",function(req,res){
         res.send(false)
     })
 
-}).catch(function(error){
+.catch(function(error){
     console.log(error)
 })
 
-})
+
 
 app.get("/gethistory", async function(req,res){
 

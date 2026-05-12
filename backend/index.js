@@ -68,7 +68,6 @@ app.post("/sendemail",function(req,res){
         pass: "YOUR_MAILTRAP_PASSWORD"
     }
 });
-});
 
 
 
@@ -100,7 +99,7 @@ app.post("/sendemail",function(req,res){
         recipients:emailList,
         status:"Failed"
     })
-        console.log(error)
+        console.log("MAILTRAP ERROR:", error);
         reject("Failed")
     }
     }).then(function(){
@@ -109,7 +108,7 @@ app.post("/sendemail",function(req,res){
         res.send(false)
     })
 
-.catch(function(error){
+}).catch(function(error){
     console.log(error)
 })
 

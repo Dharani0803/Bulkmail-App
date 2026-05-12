@@ -63,6 +63,7 @@ app.post("/sendemail",function(req,res){
    
     credential.find().then(function(data){
         console.log(data)
+        
          if(data.length === 0){
         console.log("No credentials found");
         return res.send(false)

@@ -60,6 +60,9 @@ app.post("/sendemail",function(req,res){
     const emailList = req.body.emailList
     const subject = req.body.subject
 
+    console.log("SEND EMAIL API HIT");
+console.log(emailList);
+
     credential.find().then(function(data){
 
     const transporter = nodemailer.createTransport({
@@ -102,7 +105,7 @@ app.post("/sendemail",function(req,res){
         recipients:emailList,
         status:"Failed"
     })
-        console.log(error)
+        console.log("EMAIL ERROR:", error);
         reject("Failed")
     }
     }).then(function(){
@@ -112,7 +115,7 @@ app.post("/sendemail",function(req,res){
     })
 
 }).catch(function(error){
-    console.log(error)
+    console.log("EMAIL ERROR:", error);
 })
 
 });

@@ -69,29 +69,20 @@ app.post("/sendemail",function(req,res){
         return res.send(false)
     }
 
-    const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: data[0].toJSON().user,
-        pass: data[0].toJSON().pass,
-    },
-    tls: {
-        rejectUnauthorized: false
-    },
-    family: 4
-});
+    const { Resend } = require("resend");
+
+    const resend = new Resend("re_isjxup3Z_GxzAf88b67xi1r7Aqz9hCcoH");
 
 
  new Promise(async function(resolve,reject){
     try{
         for(var i=0;i<emailList.length;i++){
-        await transporter.sendMail(
-            {
-                from:"dd1452327@gmail.com",
-                to:emailList[i],
-                subject:subject,
-                text:msg
-            })
+        await resend.emails.send({
+            from:"onboarding@resend.dev",
+            to: emailList[i],
+            subject: subject,
+            text: msg
+        });
             console.log("Email  send to:" + emailList[i])
         }
 

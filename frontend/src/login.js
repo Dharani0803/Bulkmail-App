@@ -58,7 +58,7 @@ function Login() {
   return (
     <div className="relative h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: `url(${bg})`}}>
     <div className="absolute inset-0 bg-black/50"></div>
-    <div className="relative z-10 bg-black/40 rounded-lg py-10 px-5 w-[550px] flex flex-col items-center justify-center text-center">
+    <div className="relative z-10 bg-black/40 rounded-lg py-10 px-5 w-[400px] md:w-[550px] flex flex-col items-center justify-center text-center">
       <h1 className="text-3xl font-bold text-white">Log In</h1>
       <p className="font-semibold mt-1 mb-6 text-white">Enter your info to log in</p>
       <input className="w-64 border border-gray-400 p-3 rounded mb-2" onChange={handleUser} name="username" placeholder="Enter Email or Username"/>

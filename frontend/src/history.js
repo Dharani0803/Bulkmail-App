@@ -20,21 +20,21 @@ function History() {
 
   return (
     <div>
-      <nav className="bg-blue-950 px-10 py-5 flex justify-between items-center ">
+      <nav className="bg-blue-950 px-5 md:px-10 py-5 flex justify-between items-center flex-wrap">
         <div className="flex gap-3"><div>
-          <img className="w-[70px]" src={logo} alt="Logo" /></div>
+          <img className="md:w-[70px] w-[60px]" src={logo} alt="Logo" /></div>
           <div>
-            <h1 className="text-white text-4xl font-extrabold">Bulkmail</h1>
-            <p className="text-white text-sm mt-2">
+            <h1 className="text-white text-3xl md:text-4xl font-extrabold">Bulkmail</h1>
+            <p className="text-white text-sm md:mt-2">
               Email History Page
             </p>
           </div></div>
         <div>
-          <button onClick={() => navigate("/home")} className="bg-white text-gray-600 text-xlg font-bold px-3 py-2 rounded-lg">Back to Home</button>
+          <button onClick={() => navigate("/home")} className="bg-white text-gray-600 font-bold px-3 md:py-2 py-1 rounded-lg">Back to Home</button>
         </div>
       </nav>
 
-      <main className="bg-blue-50 px-10 min-h-screen py-8">
+      <main className="bg-blue-50 md:px-10 px-5 min-h-screen md:py-8 py-5">
 
         <h2 className="text-2xl font-bold mb-5">Emails History</h2>
 

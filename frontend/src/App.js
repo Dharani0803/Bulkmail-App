@@ -69,18 +69,18 @@ function App() {
 
   return (
     <div>
-      <nav className="bg-blue-950 px-10 py-5 flex justify-between items-center ">
+      <nav className="bg-blue-950 px-5 md:px-10 py-5 flex justify-between items-center flex-wrap gap-4">
         <div className="flex gap-3"><div>
-        <img className="w-[70px]" src={logo} alt="Logo"/></div>
-        <div><h1 className=" text-white text-4xl font-extrabold">Bulkmail</h1>
-        <p className="text-white text-sm mt-2">Send personalized bulk emails quickly and efficiently</p></div></div>
+        <img className="md:w-[70px] w-[60px]" src={logo} alt="Logo"/></div>
+        <div><h1 className=" text-white md:text-4xl text-3xl font-extrabold">Bulkmail</h1>
+        <p className="text-white text-sm md:mt-2">Send personalized bulk emails quickly and efficiently</p></div></div>
         <div>
-          <button onClick={() => navigate("/history")} className="bg-white text-gray-600 text-xlg font-bold px-3 py-2 rounded-lg">Go to History</button>
+          <button onClick={() => navigate("/history")} className="bg-white text-gray-600 font-bold px-3 md:py-2 py-1 rounded-lg">Go to History</button>
         </div>
       </nav>
-      <main className="bg-blue-50 px-10 min-h-screen">
-        <div className=" flex flex-col items-center ">
-        <p className="text-2xl font-bold pt-7">We can help your business with sending multiple emails at once</p>
+      <main className="bg-blue-50 md:px-10 px-5 min-h-screen text-center">
+        <div className=" flex flex-col items-center">
+        <p className="text-2xl font-bold pt-7 mb-1">We can help your business with sending multiple emails at once</p>
         <p>Upload your email list, type your message, and reach multiple recipients in just one click.</p></div>
         <div className="flex flex-col items-center pt-10">
         <input type="text" placeholder="Enter the Subject here..." value={subject} onChange={handlesubject} className="w-[75%] mb-3 px-2 py-2 outline-none border border-gray-300 rounded-md"/>
@@ -95,7 +95,7 @@ function App() {
       </div>
 
         <p className="text-lg font-semibold mb-5">Total Email in the file: {emailList.length}</p>
-        <button disabled={status} className="bg-blue-900 text-white px-4 py-1 font-semibold rounded-md disabled:opacity-50" onClick={send}>{status?"Sending...":"Send"}</button></div>
+        <button disabled={status} className="bg-blue-900 text-white px-5 py-2 font-semibold rounded-md disabled:opacity-50" onClick={send}>{status?"Sending...":"Send"}</button></div>
       </main>
     </div>
   );

@@ -60,13 +60,14 @@ app.post("/sendemail",function(req,res){
     const emailList = req.body.emailList
     const subject = req.body.subject
 
+    credential.find().then(function(data){
+
     const transporter = nodemailer.createTransport({
-    host: "sandbox.smtp.mailtrap.io",
-    port: 2525,
+    service:"gmail",
     auth: {
-        user: "YOUR_MAILTRAP_USERNAME",
-        pass: "YOUR_MAILTRAP_PASSWORD"
-    }
+        user: data[0].toJSON().user,
+        pass: data[0].toJSON().pass,
+  }
 });
 
 
@@ -99,7 +100,7 @@ app.post("/sendemail",function(req,res){
         recipients:emailList,
         status:"Failed"
     })
-        console.log("MAILTRAP ERROR:", error);
+        console.log(error)
         reject("Failed")
     }
     }).then(function(){
@@ -112,7 +113,7 @@ app.post("/sendemail",function(req,res){
     console.log(error)
 })
 
-
+});
 
 app.get("/gethistory", async function(req,res){
 

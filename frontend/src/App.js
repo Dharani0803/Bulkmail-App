@@ -58,6 +58,7 @@ function App() {
       }
       else{
         alert("Failed")
+        setstatus(false);
       }
     }).catch(function (error) {
       console.log(error);
